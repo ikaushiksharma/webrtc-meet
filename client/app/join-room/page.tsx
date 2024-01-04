@@ -1,12 +1,12 @@
+"use client";
 import React, { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { connect } from "react-redux";
 import { setIsRoomHost } from "@/lib/redux/actions";
-import JoinRoomTitle from "./JoinRoomTitle";
-import JoinRoomContent from "./JoinRoomContent";
+import JoinRoomTitle from "@/app/components/JoinRoomPage/JoinRoomTitle";
+import JoinRoomContent from "@/app/components/JoinRoomPage/JoinRoomContent";
 
-import { useSearchParams } from "next/navigation";
-
-const JoinRoomPage = (props) => {
+const JoinRoomPage = (props: any) => {
   const { setIsRoomHostAction, isRoomHost } = props;
 
   const search = useSearchParams();
@@ -28,15 +28,15 @@ const JoinRoomPage = (props) => {
   );
 };
 
-const mapStoreStateToProps = (state) => {
+const mapStoreStateToProps = (state: any) => {
   return {
     ...state,
   };
 };
 
-const mapActionsToProps = (dispatch) => {
+const mapActionsToProps = (dispatch: any) => {
   return {
-    setIsRoomHostAction: (isRoomHost) => dispatch(setIsRoomHost(isRoomHost)),
+    setIsRoomHostAction: (isRoomHost: any) => dispatch(setIsRoomHost(isRoomHost)),
   };
 };
 

@@ -1,10 +1,8 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 const Button = ({ buttonText, cancelButton = false, onClickHandler }) => {
-  const buttonClass = cancelButton
-    ? "join_room_cancel_button"
-    : "join_room_success_button";
+  const buttonClass = cancelButton ? "join_room_cancel_button" : "join_room_success_button";
 
   return (
     <button onClick={onClickHandler} className={buttonClass}>
@@ -16,7 +14,7 @@ const Button = ({ buttonText, cancelButton = false, onClickHandler }) => {
 const JoinRoomButtons = ({ handleJoinRoom, isRoomHost }) => {
   const successButtonText = isRoomHost ? "Host" : "Join";
 
-  const history = useHistory();
+  const history = useRouter();
 
   const pushToIntroductionPage = () => {
     history.push("/");
@@ -25,11 +23,7 @@ const JoinRoomButtons = ({ handleJoinRoom, isRoomHost }) => {
   return (
     <div className="join_room_buttons_container">
       <Button buttonText={successButtonText} onClickHandler={handleJoinRoom} />
-      <Button
-        buttonText="Cancel"
-        cancelButton
-        onClickHandler={pushToIntroductionPage}
-      />
+      <Button buttonText="Cancel" cancelButton onClickHandler={pushToIntroductionPage} />
     </div>
   );
 };

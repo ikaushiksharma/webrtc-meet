@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import JoinRoomInputs from "./JoinRoomInputs";
 import { connect } from "react-redux";
 import OnlyWithAudioCheckbox from "./OnlyWithAudioCheckbox";
-import { setConnectOnlyWithAudio } from "../store/actions";
+import { setConnectOnlyWithAudio } from "@/lib/redux/actions";
 import ErrorMessage from "./ErrorMessage";
 import JoinRoomButtons from "./JoinRoomButtons";
 
