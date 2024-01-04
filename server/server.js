@@ -113,7 +113,7 @@ const joinRoomHandler = (data, socket) => {
 
   // join room as user which just is trying to join room passing room id
   const room = rooms.find((room) => room.id === roomId);
-  room.connectedUsers = [...room.connectedUsers, newUser];
+  room.connectedUsers = [...room.connectedUsers || [], newUser];
 
   // join socket.io room
   socket.join(roomId);

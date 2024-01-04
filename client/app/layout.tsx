@@ -6,7 +6,10 @@ export default function RootLayout(props: React.PropsWithChildren) {
   return (
     <Providers>
       <html lang="en">
-        <body>{props.children}</body>
+        <body>
+          {props.children}
+          <div id="videos_portal"></div>
+        </body>
       </html>
     </Providers>
   );

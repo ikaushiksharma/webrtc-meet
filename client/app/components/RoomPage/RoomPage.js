@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
+import ChatSection from "./ChatSection/ChatSection";
+import ParticipantsSection from "./ParticipantsSection/ParticipantsSection";
+import VideoSection from "./VideoSection/VideoSection";
+import RoomLabel from "./RoomLabel";
+import { connect } from "react-redux";
+import * as webRTCHandler from "../utils/webRTCHandler";
+import Overlay from "./Overlay";
 
-const RoomPage = () => {
-  return <div>Hello here is room page</div>;
-};
-
-export default RoomPage;
+import "./RoomPage.css";

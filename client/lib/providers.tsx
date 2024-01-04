@@ -1,11 +1,16 @@
-'use client'
+"use client";
 
 /* Core */
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
 
 /* Instruments */
-import { reduxStore } from '@/lib/redux'
+import store from "@/lib/redux";
+import { connectWithSocketIOServer } from "@/lib/utils/wss";
+import { useEffect } from "react";
 
 export const Providers = (props: React.PropsWithChildren) => {
-  return <Provider store={reduxStore}>{props.children}</Provider>
-}
+  useEffect(() => {
+    connectWithSocketIOServer();
+  }, []);
+  return <Provider store={store}>{props.children}</Provider>;
+};
